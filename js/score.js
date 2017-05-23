@@ -9,7 +9,7 @@ function Score(x, y) {
     };
     this.updateScore = function () {
       for (var i = 0; i < gameObstacles.length; i += 1) {
-        var d = sprite.x - (gameObstacles[i].x + gameObstacles[i].w);
+        var d = player.posX - (gameObstacles[i].x + gameObstacles[i].w);
         if (d >= 0 && d < 1) {
           score += 1;
         }
@@ -19,5 +19,3 @@ function Score(x, y) {
       score = 0;
     };
   }
-  
-window.addEventListener('load', Score);

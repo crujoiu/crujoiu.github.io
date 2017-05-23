@@ -33,5 +33,3 @@ function Sprite(x, y, w, h, path) {
       return crash;
     };
 }
-  
-window.addEventListener('load', Sprite);
