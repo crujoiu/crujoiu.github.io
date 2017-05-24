@@ -19,7 +19,7 @@ var obstacles = [
     new Obstacle("assets/arrow.png", 815, 265, 30, 15)
 ];
 var ground = new Obstacle("assets/base.png", 0, 360, 800, 100);
-var background = new Background("assets/layer.png", 0, 0);
+var background = new Background("assets/layer2.png", 0, 0, 3);
 var myscore = new Score(670, 35);
 
 function clearCanvas() {
