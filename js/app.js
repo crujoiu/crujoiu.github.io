@@ -15,8 +15,8 @@ var gameObstacles = [];
 var obstacles = [
     new Obstacle("assets/spikeone.png", 815, 330, 15, 30),
     new Obstacle("assets/spikesthree.png", 815, 323, 35, 37),
-    //new Obstacle("assets/spikesgroup.png", 815, 336, 25, 24),
-    new Obstacle("assets/arrow.png", 815, 265, 30, 15)
+    new Obstacle("assets/arrow.png", 815, 265, 30, 15),
+    new Obstacle("assets/spikesgroup.png", 815, 336, 25, 34)
 ];
 var ground = new Obstacle("assets/base.png", 0, 360, 800, 100);
 var background = new Background("assets/layer2.png", 0, 0, 3);
