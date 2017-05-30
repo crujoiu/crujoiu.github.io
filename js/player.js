@@ -16,9 +16,9 @@ function Player(posX, posY) {
         var playerTop = this.posY - this.height + 35;
         var playerBottom = this.posY;
         var obstLeft = obst.x;
-        var obstRight = obst.x + obst.w;
-        var obstTop = obst.y - obst.h;
-        var obstBottom = obst.y;
+        var obstRight = obst.x + obst.scaledW;
+        var obstTop = obst.newYPoz - obst.scaledH;
+        var obstBottom = obst.newYPoz;
         var crash = false;
         if ((playerRight < obstLeft) || (playerBottom < obstTop) || (playerLeft > obstRight) || (playerTop > obstBottom)) {
             crash = true;

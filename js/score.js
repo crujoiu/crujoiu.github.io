@@ -9,8 +9,8 @@ function Score(x, y) {
     };
     this.updateScore = function () {
       for (var i = 0; i < gameObstacles.length; i += 1) {
-        var d = player.posX - (gameObstacles[i].x + gameObstacles[i].w);
-        if (d >= 0 && d < 1) {
+        var d = player.posX - Math.floor(gameObstacles[i].x + gameObstacles[i].scaledW);
+        if (d >= 0 && d < 3) {
           score += 1;
         }
       }
