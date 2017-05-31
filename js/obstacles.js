@@ -3,6 +3,7 @@ function Obstacle(path, x, y, w, h, scaleFactor) {
     this.y = y;
     this.w = w;
     this.h = h;
+    this.speed = 5;
     this.scaleFactor = scaleFactor;
     this.scaledW = w / scaleFactor;
     this.scaledH = h / scaleFactor;
@@ -13,7 +14,7 @@ function Obstacle(path, x, y, w, h, scaleFactor) {
         ctx.drawImage(image, 0, 0, this.w, this.h, this.x, this.newYPoz, this.scaledW, this.scaledH);
     };
     this.moveObstacle = function () {
-        this.x -= 5;
+        this.x -= this.speed;
     };
     this.drawGround = function () {
         ctx.drawImage(image, 0, 0, this.w, this.h, this.x, this.y, this.w, this.h);

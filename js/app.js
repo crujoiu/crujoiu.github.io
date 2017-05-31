@@ -100,6 +100,12 @@ function getRandomDist() {
     for (var i = 0; i < gameObstacles.length; i += 1) {
       gameObstacles[i].drawObstacle();
       gameObstacles[i].moveObstacle();
+        if (score % 10 === 0 && running) {
+        //increase the speed 
+        gameObstacles[i].speed += 1;
+        } else {
+            gameObstacles[i].speed = 5;
+        }
     }
   }
 
@@ -138,13 +144,13 @@ function updateFrame() {
         manageGameObstaclesArray();
         updateObstacles();
         ground.drawGround();
+        detectCollision();
         if (frame > 0 && frame < 100) {
             document.getElementById("warning").style.display = "block";
         }
         else {
             document.getElementById("warning").style.display = "none";
         }
-        detectCollision();
     }
 }
 
