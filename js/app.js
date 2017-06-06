@@ -11,9 +11,9 @@ var frame = 0;
 var player = new Player(100, 304);
 var gameObstacles = [];
 var obstacles = [
-    new Obstacle("assets/spikeC.png", 815, 360, 139, 250, 4),
+    new Obstacle("assets/spikeC.png", 815, 360, 139, 250, 5),
     new Obstacle("assets/spikeB.png", 815, 360, 343, 177, 5),
-    new Obstacle("assets/spikeD.png", 815, 280, 326, 159, 6),
+    new Obstacle("assets/spikeD.png", 815, 290, 326, 159, 6),
     new Obstacle("assets/spikeA.png", 815, 360, 364, 202, 5)
 ];
 var ground = new Obstacle("assets/base.png", 0, 360, 800, 100);
