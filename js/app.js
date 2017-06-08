@@ -5,7 +5,7 @@ canvas.width = 800;
 canvas.height = 380;
 var interval = 0;
 var score = 0;
-var thresholdScore = 5;
+var thresholdScore = 10;
 var canJump = false;
 var running = true;
 var frame = 0;
@@ -142,7 +142,7 @@ function updateFrame() {
             for (var i = 0; i < obstacles.length; i += 1) {
                 obstacles[i].speed += 1; 
             }
-            thresholdScore = thresholdScore + 5;
+            thresholdScore = thresholdScore + 10;
         }
         player.drawPlayer();
         manageGameObstaclesArray();

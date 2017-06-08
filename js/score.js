@@ -20,7 +20,7 @@ function Score(x, y) {
       score = 0;
     };
     this.resetThresholdScore = function (){
-      thresholdScore = 5;
+      thresholdScore = 10;
     }
     this.getScore = function() {
       return score;
