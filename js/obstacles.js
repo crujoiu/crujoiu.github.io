@@ -10,6 +10,9 @@ function Obstacle(path, x, y, w, h, scaleFactor) {
     this.newYPoz = y - this.scaledH; 
     var image = new Image();
     image.src = path;
+    this.resetSpeed = function() {
+        speed = 5;
+    };
     this.drawObstacle = function () {
         ctx.drawImage(image, 0, 0, this.w, this.h, this.x, this.newYPoz, this.scaledW, this.scaledH);
     };

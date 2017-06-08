@@ -5,6 +5,7 @@ canvas.width = 800;
 canvas.height = 380;
 var interval = 0;
 var score = 0;
+var thresholdScore = 5;
 var canJump = false;
 var running = true;
 var frame = 0;
@@ -70,8 +71,8 @@ function land(e) {
 }
 
 function getRandomDist() {
-    var min = 300;
-    var max = 500;
+    var min = 250;
+    var max = 550;
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
@@ -124,6 +125,9 @@ function stop() {
     window.removeEventListener("keydown", jump, false);
     window.removeEventListener("keyup", disableJump, false);
     enableJump();
+    for (var i = 0; i < obstacles.length; i += 1) {
+            obstacles[i].speed = 5;
+    }
 }
 
 function updateFrame() {
@@ -134,6 +138,12 @@ function updateFrame() {
         background.drawBackground();
         myscore.drawScore();
         myscore.updateScore();
+        if (myscore.getScore() >= thresholdScore) {
+            for (var i = 0; i < obstacles.length; i += 1) {
+                obstacles[i].speed += 1; 
+            }
+            thresholdScore = thresholdScore + 5;
+        }
         player.drawPlayer();
         manageGameObstaclesArray();
         updateObstacles();
@@ -149,6 +159,8 @@ function updateFrame() {
 }
 
 function start() {
+    myscore.resetThresholdScore();
+    myscore.resetScore();
     running = true;
     pushRandomObstacle();
     window.addEventListener("keydown", jump, false);

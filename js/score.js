@@ -9,13 +9,20 @@ function Score(x, y) {
     };
     this.updateScore = function () {
       for (var i = 0; i < gameObstacles.length; i += 1) {
-        var d = player.posX - Math.floor(gameObstacles[i].x + gameObstacles[i].scaledW);
-        if (d > 0  && d < 4) {
+        var distancePlayerObstacle = player.posX - Math.floor(gameObstacles[i].x + gameObstacles[i].scaledW);
+        if (distancePlayerObstacle > 0 && !gameObstacles[i].hasPassed) {
           score += 1;
+          gameObstacles[i].hasPassed = true;
         }
       }
     };
     this.resetScore = function () {
       score = 0;
+    };
+    this.resetThresholdScore = function (){
+      thresholdScore = 5;
+    }
+    this.getScore = function() {
+      return score;
     };
   }

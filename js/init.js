@@ -5,7 +5,6 @@ $(window).on('load', function() {
         clearCanvas();
         document.getElementById("cover").style.display = "none";
         gameObstacles = [];
-        myscore.resetScore();
         canJump = true;
         $("#restart").hide();
         $("#start").hide();

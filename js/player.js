@@ -11,7 +11,7 @@ function Player(posX, posY) {
     this.landAnim = new Animation(this.character, 4, 8, 8);
     this.anim = this.runAnim;
     this.crashed = function (obst) {
-        var playerLeft = this.posX;
+        var playerLeft = this.posX + 15;
         var playerRight = this.posX + this.width - 20;
         var playerTop = this.posY - this.height + 35;
         var playerBottom = this.posY;
