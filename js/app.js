@@ -138,9 +138,9 @@ function updateFrame() {
         background.drawBackground();
         myscore.drawScore();
         myscore.updateScore();
-        if (myscore.getScore() > thresholdScore) {
+        if (myscore.getScore() >= thresholdScore) {
             for (var i = 0; i < obstacles.length; i += 1) {
-                obstacles[i].speed += 1; 
+                obstacles[i].speed += 1;
             }
             thresholdScore = thresholdScore + 10;
         }
